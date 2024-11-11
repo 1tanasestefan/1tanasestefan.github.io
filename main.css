@@ -23,12 +23,14 @@ header {
 
 .navbar {
     display: flex;
-    justify-content: space-between; /* space-between */
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: auto;
     padding: 0 1rem;
+    position: relative;
 }
+
 
 .nav-links a {
     color: #fff;
@@ -48,7 +50,20 @@ header {
     list-style: none;
     display: flex;
     gap: 1rem;
-    position: relative;
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.dark-mode-toggle {
+    margin-left: auto; 
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .dropdown {
@@ -86,13 +101,6 @@ header {
 
 .dropdown-menu li a:hover {
     background: #00bcd4;
-}
-
-.dark-mode-toggle {
-    margin-left: auto; /* Ensures the toggle is pushed to the far right */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 }
 
 .dark-mode-toggle svg {
