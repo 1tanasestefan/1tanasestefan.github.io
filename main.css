@@ -1,0 +1,403 @@
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9f9f9;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* space-between */
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.3s ease, background 0.5s ease, transform 0.7s ease;
+}
+
+.nav-links a:hover {
+    color: #333;
+    background: #00bcd4;
+    transform: scale(1.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background: #00bcd4;
+}
+
+.dark-mode-toggle {
+    margin-left: auto; /* Ensures the toggle is pushed to the far right */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dark-mode-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff; /* Default icon color for dark mode */
+    transition: fill 0.3s ease; /* Smooth color transition when toggling */
+}
+
+/* Optional: Add hover effect for the icon */
+.dark-mode-toggle:hover svg {
+    fill: #00bcd4; /* Accent color when hovered */
+}
+
+@keyframes expandFade {
+    0% {
+        font-size: 2.5rem;
+        color: #333;
+        letter-spacing: 1px;
+    }
+    50% {
+        font-size: 3rem;
+        color: #00bcd4;
+        letter-spacing: 3px;
+    }
+    100% {
+        font-size: 2.5rem;
+        color: #333;
+        letter-spacing: 1px;
+    }
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        gap: 0.5rem;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.section {
+    padding: 4rem 1rem;
+    text-align: center;
+    overflow: hidden;
+    background-color: #444; /* Dark background */
+    color: #fff; /* Light text color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+a.cta-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #00bcd4;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+a.cta-btn:hover {
+    background: #008c9e;
+    transform: scale(1.05);
+}
+
+.about-grid, .education-grid, .skills-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.about-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-grid img{
+    border-radius: 50%;
+    width:300px;
+    height:300px;
+}
+
+.about-text{
+    padding-top: 3em;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.skill-item {
+    background-color: #00bcd4;
+    color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    width: 250px; /* Adjust the size of the cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.skill-item p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form form {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    grid-column: span 2; 
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    grid-column: span 2; 
+    padding: 0.8rem;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #008c9e;
+}
+
+@media (max-width: 600px) {
+    .contact-form form {
+        grid-template-columns: 1fr; 
+    }
+
+    .contact-form textarea,
+    .contact-form button {
+        grid-column: 1; 
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the vertical scrollbar */
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00bcd4; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded edges for the scrollbar thumb */
+    transition: background-color 0.3s ease; /* Smooth transition when hovered */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #008c99; /* Darker color when hovering over the thumb */
+}
+
+::-webkit-scrollbar-track {
+    background: #333; /* Background color of the scrollbar track */
+    border-radius: 10px; /* Rounded edges for the scrollbar track */
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #444; /* Darker track color when hovering */
+}
+
+/* Optional: Styling for the horizontal scrollbar */
+::-webkit-scrollbar-horizontal {
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb-horizontal {
+    background: #00bcd4;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb-horizontal:hover {
+    background: #008c99;
+}
