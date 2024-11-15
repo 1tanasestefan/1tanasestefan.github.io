@@ -106,13 +106,12 @@ header {
 .dark-mode-toggle svg {
     width: 24px;
     height: 24px;
-    fill: #fff; /* Default icon color for dark mode */
-    transition: fill 0.3s ease; /* Smooth color transition when toggling */
+    fill: #fff; 
+    transition: fill 0.3s ease; 
 }
 
-/* Optional: Add hover effect for the icon */
 .dark-mode-toggle:hover svg {
-    fill: #00bcd4; /* Accent color when hovered */
+    fill: #00bcd4; 
 }
 
 @keyframes expandFade {
@@ -209,14 +208,18 @@ header {
     padding: 4rem 1rem;
     text-align: center;
     overflow: hidden;
-    background-color: #444; /* Dark background */
-    color: #fff; /* Light text color */
+    background-color: #444; 
+    color: #fff; 
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 0 1rem;
+}
+
+.home-content{
+    margin-top:50px;
 }
 
 h1, h2 {
@@ -278,7 +281,7 @@ a.cta-btn:hover {
     border-radius: 10px;
     padding: 2rem;
     text-align: center;
-    width: 250px; /* Adjust the size of the cards */
+    width: 250px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -365,40 +368,39 @@ a.cta-btn:hover {
 }
 
 footer {
-    text-align: center;
+    text-align: left;
     padding: 1rem 0;
+    padding-left: 30px;
     background: #333;
     color: #fff;
 }
 
-/* Custom Scrollbar Styles */
 ::-webkit-scrollbar {
-    width: 12px; /* Width of the vertical scrollbar */
-    height: 12px; /* Height of the horizontal scrollbar */
+    width: 12px; 
+    height: 12px; 
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #00bcd4; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded edges for the scrollbar thumb */
-    transition: background-color 0.3s ease; /* Smooth transition when hovered */
+    background: #00bcd4; 
+    border-radius: 10px; 
+    transition: background-color 0.3s ease; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #008c99; /* Darker color when hovering over the thumb */
+    background: #008c99; 
 }
 
 ::-webkit-scrollbar-track {
-    background: #333; /* Background color of the scrollbar track */
-    border-radius: 10px; /* Rounded edges for the scrollbar track */
+    background: #333; 
+    border-radius: 10px; 
 }
 
 ::-webkit-scrollbar-track:hover {
-    background: #444; /* Darker track color when hovering */
+    background: #444; 
 }
 
-/* Optional: Styling for the horizontal scrollbar */
 ::-webkit-scrollbar-horizontal {
-    height: 12px; /* Height of the horizontal scrollbar */
+    height: 12px; 
 }
 
 ::-webkit-scrollbar-thumb-horizontal {
