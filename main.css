@@ -15,6 +15,44 @@ body {
     background: #f9f9f9;
 }
 
+h1, h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+a.cta-btn {
+    background: linear-gradient(90deg, #00bcd4, #008cba);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Cards and Grids */
+.education-card:hover, .skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+}
+
+.fade-in-delay {
+    opacity: 0;
+    animation: fade-in 1.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    to { opacity: 1; }
+}
+
 header {
     background: #333;
     color: #fff;
@@ -44,6 +82,8 @@ header {
     color: #333;
     background: #00bcd4;
     transform: scale(1.1);
+    text-decoration: underline;
+    transition: color 0.3s, text-decoration 0.3s ease-in-out;
 }
 
 .nav-links {
@@ -170,12 +210,12 @@ header {
 
 .fade-in {
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    animation: fade-in 1s ease-in-out forwards;
 }
 
 .fade-in-delay {
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    animation: fade-in 1.5s ease-in-out forwards;
 }
 
 .slide-in {
@@ -240,6 +280,39 @@ a.cta-btn {
 a.cta-btn:hover {
     background: #008c9e;
     transform: scale(1.05);
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.education-item {
+    background: #00bcd4; /* Bright cyan background */
+    color: #333; /* Dark text for readability */
+    font-size: 1.1rem; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Better line spacing */
+    padding: 1.5rem; /* Add sufficient padding around text */
+    border-radius: 10px; /* Rounded corners for a clean design */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow to help with contrast */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item h3 {
+    font-size: 1.4rem; /* Larger heading for emphasis */
+    color: #fff; /* White heading for contrast */
+    margin-bottom: 0.5rem; /* Space below the heading */
+}
+
+.education-item p {
+    margin-bottom: 1rem; /* Space out paragraphs */
+    color: #fff; /* White text for secondary information */
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance hover effect */
 }
 
 .about-grid, .education-grid, .skills-grid {
