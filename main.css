@@ -15,15 +15,14 @@ body {
     background: #f9f9f9;
 }
 
+:root {
+    --bg-cards-color: #00bcd4;
+}
+
 h1, h2 {
     text-transform: uppercase;
     font-weight: 600;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-a.cta-btn {
-    background: linear-gradient(90deg, #00bcd4, #008cba);
-    animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
@@ -31,14 +30,6 @@ a.cta-btn {
     50% { transform: scale(1.1); }
 }
 
-/* Cards and Grids */
-.education-card:hover, .skill-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 15px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Animations */
 .fade-in {
     opacity: 0;
     animation: fade-in 1s ease-in-out forwards;
@@ -99,11 +90,21 @@ header {
     flex-shrink: 0;
 }
 
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .dark-mode-toggle {
     margin-left: auto; 
     display: flex;
     align-items: center;
     cursor: pointer;
+    animation: rotate 10s linear infinite;
 }
 
 .dropdown {
@@ -282,39 +283,6 @@ a.cta-btn:hover {
     transform: scale(1.05);
 }
 
-.education-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.education-item {
-    background: #00bcd4; /* Bright cyan background */
-    color: #333; /* Dark text for readability */
-    font-size: 1.1rem; /* Slightly larger font size for readability */
-    line-height: 1.6; /* Better line spacing */
-    padding: 1.5rem; /* Add sufficient padding around text */
-    border-radius: 10px; /* Rounded corners for a clean design */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow to help with contrast */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item h3 {
-    font-size: 1.4rem; /* Larger heading for emphasis */
-    color: #fff; /* White heading for contrast */
-    margin-bottom: 0.5rem; /* Space below the heading */
-}
-
-.education-item p {
-    margin-bottom: 1rem; /* Space out paragraphs */
-    color: #fff; /* White text for secondary information */
-}
-
-.education-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance hover effect */
-}
-
 .about-grid, .education-grid, .skills-grid {
     display: grid;
     gap: 2rem;
@@ -324,20 +292,91 @@ a.cta-btn:hover {
     grid-template-columns: 1fr 1fr;
 }
 
-.about-grid img{
+.about-card {
+    background: #00bcd4;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-card .about-image img {
     border-radius: 50%;
     width:300px;
     height:300px;
+    margin-bottom: 1rem;
 }
 
-.about-text{
-    padding-top: 3em;
+.about-card .about-text {
+    text-align: center;
+}
+
+.about-card .about-text p {
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.description p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-style: italic;
 }
 
 @media (max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.education-card:hover, .skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.education-item {
+    background: #00bcd4; 
+    color: #333; 
+    font-size: 1.1rem; 
+    line-height: 1.6;
+    padding: 1.5rem; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item h3 {
+    font-size: 1.4rem; 
+    color: #fff; 
+    margin-bottom: 0.5rem; 
+}
+
+.education-item p {
+    margin-bottom: 1rem; 
+    color: #fff; 
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .skills-grid {
