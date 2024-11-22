@@ -480,11 +480,33 @@ a.cta-btn:hover {
 }
 
 footer {
-    text-align: left;
-    padding: 1rem 0;
-    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #333;
     color: #fff;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.footer-socials {
+    margin-top:10px;
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    right: 2rem; 
+}
+
+.footer-socials a img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%); 
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-socials a:hover img {
+    transform: scale(1.2);
+    opacity: 0.8
 }
 
 ::-webkit-scrollbar {
