@@ -15,6 +15,61 @@ body {
     background: #f9f9f9;
 }
 
+/* Light mode styles */
+body.light-mode {
+    background: #ffffff;
+    color: #333333;
+}
+
+header.light-mode {
+    background: #f9f9f9;
+    color: #333333;
+}
+
+footer.light-mode {
+    background: #f9f9f9;
+    color: #333333;
+}
+
+section.light-mode {
+    background: #f0f0f0;
+    color: #333333;
+}
+
+body.light-mode .nav-links a {
+    color: #333333;
+}
+
+body.light-mode .nav-links a:hover {
+    background: #dddddd;
+    color: #000000;
+}
+
+/* Dropdown menu in light mode */
+body.light-mode .dropdown-menu {
+    background: #ffffff; /* White background */
+    color: #333333; /* Dark text */
+}
+
+/* Dropdown menu items in light mode */
+body.light-mode .dropdown-menu li a {
+    color: #333333; /* Dark text */
+    background: transparent; /* Ensure no background unless hovered */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode .dropdown-menu li a:hover {
+    background: #dddddd; /* Light gray background on hover */
+    color: #000000; /* Even darker text */
+}
+
+
+/* Dropdown menu in light mode */
+.dropdown-menu.light-mode {
+    background: #e6e6e6;
+    color: #333333;
+}
+
 :root {
     --bg-cards-color: #00bcd4;
 }
@@ -515,6 +570,31 @@ footer {
     transform: scale(1.3); 
     animation: none; 
 }
+
+#notification {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+#message-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+#message-list li {
+    background-color: #00bcd4;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+
 
 ::-webkit-scrollbar {
     width: 12px; 
