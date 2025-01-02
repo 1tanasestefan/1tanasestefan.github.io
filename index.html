@@ -80,8 +80,8 @@
                 <div class="about-text">
                     <p>I am a college student specializing in Mathematics and Computer Science, with a deep interest in web development, data analysis, and machine learning.</p>
                     <p>My journey in the tech world began with curiosity for problem-solving and maths. Through my studies, I aim to combine my mathematical foundation with programming expertise to tackle real-world challenges.</p>
-                    <p>I began studying programming at 8 years old at a programming centre in Buzău, my home county, where I started by learning Scratch, a very kid-friendly visual programming language, which ignited my passion for programming. Then I began learning C and C++, which was quite a heavy step for a kid at the age of 11, but I adapted easily and loved to learn algorithms and to participate competitive programming contests such as OJI. Since then, I still love programming in C and C++, but also learned other languages such as Python, Kotlin and web development languages.</p>
-                    <p>The passion for programming helped me develop problem-solving skills which were useful in mathematics for example, or made me discover new passions and hobbies such as solving various puzzles like the Rubik’s Cube.</p>
+                    <p>I began studying programming at 8 years old at a programming centre in Buzău, my home county, where I started by learning Scratch, a very kid-friendly visual programming language, which ignited my passion for programming. Then I began learning C and C++, which was quite a heavy step for a kid at the age of 11, but I adapted easily and loved to learn algorithms and to participate in competitive programming contests such as OJI. Since then, I still love programming in C and C++, but also learned other languages such as Python, Kotlin and web development languages.</p>
+                    <p>The passion for programming helped me develop problem-solving skills which were useful in mathematics for example, or made me discover new passions and hobbies.</p>
                     <p>I love learning and discovering new things and I am still in a continuous learning process.</p>
                 
                 </div>
@@ -161,13 +161,19 @@
         <div class="container">
             <h2>Contact</h2>
             <div class="contact-form">
-                <form action="#" method="post">
+                <form id="contact-form" action="#" method="post">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" placeholder="Your Message" required></textarea>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
+        </div>
+        <div id="notification" style="display: none;"></div>
+    </section>
+    <section id="messages" class="section messages">
+        <div class="container">
+            <ul id="message-list"></ul>
         </div>
     </section>
 
@@ -185,5 +191,7 @@
             </a>
         </div>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
