@@ -47,24 +47,23 @@ body.light-mode .nav-links a:hover {
 
 /* Dropdown menu in light mode */
 body.light-mode .dropdown-menu {
-    background: #ffffff; /* White background */
-    color: #333333; /* Dark text */
+    background: #ffffff; 
+    color: #333333; 
 }
 
 /* Dropdown menu items in light mode */
+
 body.light-mode .dropdown-menu li a {
-    color: #333333; /* Dark text */
-    background: transparent; /* Ensure no background unless hovered */
+    color: #333333; 
+    background: transparent; 
     transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.light-mode .dropdown-menu li a:hover {
-    background: #dddddd; /* Light gray background on hover */
-    color: #000000; /* Even darker text */
+    background: #dddddd; 
+    color: #000000;
 }
 
-
-/* Dropdown menu in light mode */
 .dropdown-menu.light-mode {
     background: #e6e6e6;
     color: #333333;
