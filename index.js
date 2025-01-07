@@ -7,13 +7,12 @@ function toggleDarkMode() {
     // adaugam clasa light-mode body-ului
     document.body.classList.toggle('light-mode');
 
-    // Find all sections and toggle the same class
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.classList.toggle('light-mode');
     });
 
-    // Toggle the class on the header and footer for consistency
+    // toggle pentru header si footer lightmode
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
     header.classList.toggle('light-mode');
@@ -25,68 +24,56 @@ function toggleDarkMode() {
 
 }
 
-
 // activeaza dark mode
 darkModeToggle.addEventListener('click', toggleDarkMode);
 
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // pentru a preveni submisia formularului
 
-    const message = document.getElementById("message").value;
-    if (!message.trim()) return;
+    // display notificare
+    const notification = document.getElementById('notification');
+    notification.textContent = 'Message sent successfully!';
+    notification.classList.remove('hidden');
 
-    // notificare
-    const notification = document.getElementById("notification");
-    notification.textContent = "Message sent successfully!";
-    notification.style.display = "block";
-    notification.style.background = "#4caf50";
-    notification.style.color = "#fff";
-    notification.style.padding = "10px";
-    notification.style.marginTop = "10px";
-    notification.style.borderRadius = "5px";
-    notification.style.animation = "fade-in";
-
-    // ascunde dupa 3 secunde
+    // ascunde dupa 5 secunde
     setTimeout(() => {
-        notification.style.display = "none";
-    }, 3000);
-
-    document.getElementById("message").value = "";
+        notification.classList.add('hidden');
+    }, 5000);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     const messageList = document.querySelector('#message-list');
 
-    // Load messages from localStorage
+    // incarcam mesajele din localstorage
     const storedMessages = JSON.parse(localStorage.getItem('messages')) || [];
     storedMessages.forEach(displayMessage);
 
-    // Handle form submission
+    // form submission handle
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        // Get form values
+        // valorile din input uri
         const name = form.elements['name'].value;
         const email = form.elements['email'].value;
         const message = form.elements['message'].value;
-        const timestamp = new Date().toLocaleString(); // Get current date and time
+        const timestamp = new Date().toLocaleString(); // data si ora
 
-        // Create message data object
+        // obiect pentru datele mesajului
         const messageData = { name, email, message, timestamp };
 
-        // Add the new message to localStorage
+        // adauga mesajul in localstorage
         storedMessages.push(messageData);
         localStorage.setItem('messages', JSON.stringify(storedMessages));
 
-        // Display the message
+        // display message
         displayMessage(messageData);
 
-        // Reset the form
+        // si apoi resetam formularul
         form.reset();
     });
 
-    // Function to display a message on the page
+    // functia pentru display message
     function displayMessage({ name, email, message, timestamp }) {
         const messageItem = document.createElement('li');
         messageItem.innerHTML = `
