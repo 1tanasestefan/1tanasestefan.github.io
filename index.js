@@ -86,4 +86,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// culoare random pentru buton cu math si random
 
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    
+    //formam un cod hexa specific unei culori prin alegerea succesiv aleatoare a unei cifre b16
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+const colorButton = document.querySelector('.color-button');
+
+// la fiecare 5 secunde se va schimba culoarea
+
+setInterval(() => {
+    const randomColor = getRandomColor();
+    colorButton.style.backgroundColor = randomColor;
+}, 5000);
+
+// fetch datelor din fisierul json pentru a fi afisat in consola
+
+document.querySelector('.color-button').addEventListener('click', function () {
+    fetch('data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Esuat: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Date secrete:', data); //succes
+        })
+        .catch(error => {
+            console.error('A fost o problema cu operatia de fetch: ', error);
+        });
+});
