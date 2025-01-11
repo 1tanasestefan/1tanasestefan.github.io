@@ -1,0 +1,8 @@
+{
+    "name": "Tanase Stefan-Daniel",
+    "age": 19,
+    "skills": ["Web Development", "Competitive Programming", "Maths"],
+    "contact": {
+        "email": "odeea2371@gmail.com"
+    }
+}
