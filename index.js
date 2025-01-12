@@ -41,6 +41,41 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     }, 5000);
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const element = document.getElementById("typing-effect");
+    const paragraphs = Array.from(element.querySelectorAll("p"));
+    const typingSpeed = 50; // viteza
+
+    let currentParagraph = 0;
+    let currentText = "";
+    let currentIndex = 0;
+
+    function typeEffect() {
+        if (currentParagraph < paragraphs.length) {
+            const paragraphText = paragraphs[currentParagraph].textContent;
+
+            if (currentIndex < paragraphText.length) {
+                currentText += paragraphText[currentIndex];
+                element.innerHTML = currentText + "|"; // blinking cursor
+                currentIndex++;
+                setTimeout(typeEffect, typingSpeed);
+            } else {
+                // urmatorul paragraf
+                currentText += "<br><br>";
+                currentParagraph++;
+                currentIndex = 0;
+                setTimeout(typeEffect, 500); // pauza intre paragrafe
+            }
+        } else {
+            element.innerHTML = currentText; // elimin cursorul dupa ce este afisat textul
+        }
+    }
+
+    // sterg textul initial
+    element.innerHTML = "";
+    typeEffect();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     const messageList = document.querySelector('#message-list');
